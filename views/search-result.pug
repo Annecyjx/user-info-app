@@ -1,0 +1,51 @@
+doctype html
+html
+	title UserApp
+	head
+		link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+		style.
+			a.brand-logo.center {
+				font-family: 'Lucida Console';
+				color: #A52A2A;
+			}
+			h2 {
+				font-family: 'Lucida Console';
+				font-style: oblique;
+				font-size: 25px;
+				margin: 0;
+				position: absolute;
+				text-align: center;
+				top:26%;
+				left:30%;
+			}
+			h3 {
+				font-family: 'Lucida Console';
+				font-size: 150%;
+				position: absolute;
+				text-align: center;
+				top:30%;
+				left:30%;
+				color: #8A2BE2;
+				background-color:#DBDBDB
+			}
+	body
+		nav
+			.nav-wrapper.teal.lighten-2
+				a.brand-logo.center(href='#!') Search Result
+				ul.left.hide-on-med-and-down
+					li
+						a(href = '/aboutUsers') All the Users   
+					li
+						a(href = '/search') Search Users 
+					li
+						a(href = '/addUsers') Add New User
+					li
+						a(href = '/home') Back To Home Page
+
+		.container
+			h2 We have found this user for you:
+			if usersInfo
+			each person in usersInfo
+				h3 #{person.firstname} #{person.lastname}: #{person.email}
+			else
+				h3 Oops! User is not found.

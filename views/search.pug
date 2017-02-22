@@ -1,0 +1,62 @@
+doctype html
+html
+	title UserApp
+	head
+		link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+		style.
+			input[type=text] {
+				width: 350px;
+				box-sizing: border-box;
+				border: 2px solid #ccc;
+				border-radius: 4px;
+				font-size: 16px;
+				background-color: white;
+				background-position: 10px 10px;
+				background-repeat: no-repeat;
+				padding: 6px 20px 6px 40px;
+				-webkit-transition: width 0.4s ease-in-out;
+				transition: width 0.4s ease-in-out;
+			}
+			input[value=Search] {
+				font-size:20px;
+			}
+			#result-box{
+				width:290px;
+				font-size:16px;
+				padding: 0px 20px 0px 40px;
+				background-color:lightgrey;
+			}
+			label {
+				font-family: 'Lucida Console';
+				font-size:18px;
+				color:#F08080;
+			}
+			a.brand-logo.center {
+				font-family: 'Lucida Console';
+				color: #A52A2A;
+			}
+	body
+		nav
+			.nav-wrapper.teal.lighten-2
+				a.brand-logo.center(href='#!') Search User
+				ul.left.hide-on-med-and-down
+					li
+						a(href = '/addUsers') Add New User
+					li
+						a(href = '/aboutUsers') All the Users
+					li
+						a(href = '/home') Back To Home Page
+
+		.main.container
+			.row
+				.col-md-6.col-md-offset-3
+					form(autocomplete="off", action='/searchResult',method='post',id='myDropdown')
+						div.form-group(style='padding-top:10%')
+							label(for='searchLabel') Tell me who you want to know:
+							input(type='text', name='searchbar', placeholder='search..', id='myInput', list='result-box')
+							input(type='submit',value='Search',)
+							datalist#result-box
+
+
+		script(type='text/javascript' src='js/jquery-3.1.1.min.js')
+		script(type='text/javascript' src='js/custom.js')

@@ -1,0 +1,34 @@
+doctype html
+html
+	title UserApp
+	head
+		link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+		style.
+			h1{
+				font-family: 'Lucida Console';
+				font-style: oblique;
+				font-size: 30px;
+				color: #cc99ff;
+				margin: 0;
+				top:10%;
+			}
+			ul {
+				font-family: 'Lucida Console';
+			}
+	body
+		nav
+			.nav-wrapper.teal.lighten-2
+				a.brand-logo.center(href='#!') User Information App
+				ul.left.hide-on-med-and-down
+					li
+						a(href = '/aboutUsers') All the Users   
+					li
+						a(href = '/search') Search Users 
+					li
+						a(href = '/addUsers') Add New User
+					li
+						a(href = '/home') Back To Home Page
+
+		h1 New User Added!
+
+

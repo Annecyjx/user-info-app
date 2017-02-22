@@ -1,0 +1,28 @@
+html
+	title UserApp
+	head
+		link(type='text/css', rel='stylesheet', href='css/materialize.min.css', media='screen,projection')
+		style.
+			ul {
+				font-family: 'Lucida Console';
+			}
+			a.brand-logo.center {
+				font-family: 'Lucida Console';
+				color: #A52A2A;
+			}
+	body
+		nav
+			.nav-wrapper.teal.lighten-2
+				a.brand-logo.center(href='#!') All the Users
+				ul.left.hide-on-med-and-down
+					li
+						a(href = '/search') Search Users  
+					li
+						a(href = '/addUsers') Add New User 
+					li
+						a(href = '/home') Back To Home Page
+
+		.container
+			each person in usersInfo
+				p.displayAllUsers(style="color:#8A2BE2;font-family:Helvetica;background-color:#DBDBDB;font-size:150%") #{person.firstname} #{person.lastname}
+
